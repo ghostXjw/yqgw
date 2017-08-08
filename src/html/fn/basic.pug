@@ -1,0 +1,36 @@
+mixin bs-title(val)
+  h2= val
+  span
+mixin bs-mititle(val)
+  .mititle
+    p= val
+    span
+mixin bs-dh
+  .y-header
+    img.img1(src="image/icon.png")
+    img.img2(src="image/xyss.png")
+    ul
+      - 
+        var arr =[
+          {
+            name:'首页',
+            url:'/index'
+            },{
+            name:'产品介绍',
+            url:'intro'
+          },{
+            name:'解决方案',
+            url:'/solution'
+            },{
+            name:'关于我们',
+            url:'/about'
+          }
+          ]
+      each val in arr
+        li
+          a(href= val.url+".html",class={'active':val.name==title})= val.name
+
+mixin bs-plan(val)
+  .title
+    img(src="image/y-plan-ico.png")
+    =val

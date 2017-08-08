@@ -1,0 +1,61 @@
+extends basic.pug
+
+append vars
+  include ../fn/basic.pug
+  - var title ="首页"
+append style
+  link(rel="stylesheet", href="style/index.css")
+block page
+  .y-header-com
+    block header
+      .y-cont
+        +bs-dh()
+        .y-banner
+          .ban-info
+            p 地毯式全面搜索
+            h2 第一时间获取舆情
+            p 维护政府、企事业单位网路形象
+            a(href="javascript:;") 申请试用
+          .y-point
+            - for(var i=0;i<3;i++)
+              a(href="javascript:;",class={active: i==0})
+  .y-content
+    block cont
+  .y-footer
+    .footer-info
+      p 申请试用
+      p 您可以
+        a(href="javascript:;") 在线提交
+        |试用申请，或通过以下方式联系我们，您将得到免费试用资格以及专业性的指导和建议
+      form
+        .form-info
+          .left
+            - var arrform=['您的姓名','您的联系电话','您的单位名称']
+              each val in arrform
+                .li
+                  label
+                    input(type="text",placeholder=val)
+          .right
+            textarea(row="10",cols="20",placeholder="您的需求")
+          button(type="button") 提交申请
+      .footer-tact
+        -
+          var arradder=[{
+            info:'TEL',
+            title:'025-52288867'
+            },{
+              info:'FAX',
+              title:'02558577790'
+            },{
+              info:'ADD',
+              title:'江苏省南京市建邺区安科大厦10楼'
+            }
+          ]
+        each val in arradder
+          .tact-list
+            span.icon
+            .ontel
+              span= val.info
+              p= val.title
+      .footer-copyright
+        p © 2013-2016 版权所有    江苏神州信源系统工程有限公司

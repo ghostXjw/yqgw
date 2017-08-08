@@ -1,0 +1,92 @@
+extends tpl/index.pug
+
+append vars
+  - var title ="产品介绍"
+
+append style
+
+  link(rel="stylesheet", href="style/intro.css")
+
+block header
+    .intro-header
+      .header.y-cont
+        +bs-dh()
+        .cont
+          .video
+          .intro-info
+            img(src="image/bg-left.png")
+            p.tiltle 产品简介
+            p 本系统综合运用搜索引擎、文本处理自然语言处理和智能分析等技术，对互联网信息自动获取和分析，提供面向互联网热点话题的监测、
+              | 分析、挖掘、溯源及报表展示等功能，着力于研究解决舆情监测工作中的全面性、准确性、时效性、关联性
+              |、持续性和可定制性等方面的需求，确保客户及时准确掌握舆情动态，满足网络舆情监控和热点事件追踪过程中各环节的用户需求
+            img(src="image/bg-right.png")
+block cont
+  .y-con-title
+    +bs-title('产品背景')
+  - var arr=['每天互联网上形形色色的新 闻事件都在发生 但其中 绝大数的都和您无关','是否还在人工用搜索 引擎在各大网站上搜索 与您单位相关的信息','时刻盯着某一论坛担心论坛 上出现一些负面信息','是否关注过微博上 某时某刻会发出一篇与您 或与您单位相关的微博']
+    each v,i in arr
+      .prt-bg(class={part: i==2})
+        if(i%2==0)
+          img(src="image/pro-bg0"+[i+1]+".png")
+          p= v 
+        else
+          p= v 
+          img(src="image/pro-bg0"+[i+1]+".png")
+  .y-intro-data
+    .y-con-title
+      +bs-title('数据采集')
+    .bs-connec-list
+      - for(var i=1;i<9;i++) 
+          label
+            img(src="image/y-connec0"+i+".png")
+  .y-fun-con
+    .y-con-title
+      +bs-title('产品功能')        
+    .y-fun
+      -  
+        var arrfun=[
+              { 
+                title:'全媒体信息抓取',
+                info:'全面监测国内外网站、论坛、微博等100万个采集点、重点采集与“我”有关的网络信息，可实现舆情信息多栏目查阅 '
+              },{
+                title:'全媒体7x24采集',
+                info:'系统提供"智能化+人工监测"双保险的预警服务，预警方式包括短信、系统弹窗，客户端预警及监测团队电话提醒服务'
+              },{ 
+                title:'海量信息自动筛选',
+                info:'系统全网扫描15min/次，重点监控5min/次，发现舆情信息，系统自动筛选过滤，并对舆情进行正负面研判处理'
+              },{ 
+                title:'智能化分类聚类',
+                info:' 系统提供"智能化+人工监测"双保险的预警服务，预警方式包括短信、系统弹窗，客户端预警及监测团队电话提醒服务'
+              },{ 
+                title:'舆情报告可定制',
+                info:'提供自动化报告，同时提供专业团队定制报告服务，包括日/周/月/年、热点事件专题等报告，提供应对处置建议 '
+              },{ 
+                title:'专业分析与预判',
+                info:'用科学的定量定性统计分析方法，分析舆情走势、路径、影响力等，帮助了解舆情发展演变过程及帮助进行舆情处置决策'
+              }
+            ]
+      each v,i in arrfun
+        .fun-item
+            if(i%2==0)
+              .fun-item-left     
+                p.title= v.title
+                p.info= v.info      
+              .fun-item-right
+                img(src="image/y-fun0"+(i+1)+".png")
+            else
+              .fun-item-left     
+                img(src="image/y-fun0"+(i+1)+".png")      
+              .fun-item-right
+                p.title= v.title
+                p.info= v.info  
+  .y-warn
+    .y-con-title
+      +bs-title('舆情预警')
+
+    -var arrwarn=['弹幕提醒','邮箱预警','短信预警','App预警']
+
+    each val,i in arrwarn
+      .y-warn-item
+        img(src="image/y-warn0"+(i+1)+".png")
+        p= val
+

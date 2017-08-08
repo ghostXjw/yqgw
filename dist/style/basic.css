@@ -1,0 +1,29 @@
+html {
+  font-size: 16px;
+}
+@font-face {
+  font-family: '方正悠黑简体_502L';
+  src: url("../font/方正悠黑简体_502L.ttf");
+}
+body {
+  font-family: '方正悠黑简体_502L';
+  margin: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f7f7f7), to(#fff));
+  background: linear-gradient(#f7f7f7, #fff);
+}
+a {
+  text-decoration: none;
+}
+img,
+a {
+  -webkit-user-drag: none;
+}
+ul,
+p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+input {
+  outline: none;
+}

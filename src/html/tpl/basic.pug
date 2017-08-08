@@ -1,0 +1,16 @@
+block vars
+doctype html
+html(lang="zh")
+    head
+      meta(charset="UTF-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      meta(http-equiv="X-UA-Compatible", content="ie=edge")
+      title 舆情官网 | #{title}
+      link(rel="stylesheet", href="style/basic.css")
+      block style
+    body
+      .y-root
+        block page
+      script(src="lib/jquery.min.js")
+      script(src="js/basic.js")
+      block script

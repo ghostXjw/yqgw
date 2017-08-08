@@ -1,0 +1,114 @@
+extends tpl/index.pug
+
+
+block cont
+    .y-con-title
+      +bs-title('舆情检测重要性')
+    .y-main
+      .y-main-list
+        - 
+          var arrinfo=[
+            {
+              name:'参与自由度大',
+              info:'匿名发帖让负面消息无 从溯源'
+            },{
+              name:'网民互动性高',
+              info:'通常分阵型探讨、争论 甚至交锋，容易引发关注'
+            },{
+              name:'舆情覆盖面广',
+              info:'政治、经济、文化 社会、生活，无一疏漏'
+            },{
+              name:'言论情绪偏差大',
+              info:'主观、偏激、不健康 随时引爆舆论争议'
+            },{
+              name:'传播速度迅猛',
+              info:'点击过亿只需数小时 即可轻易达成'
+            }
+          ]
+        each val,i in arrinfo
+          .y-imlist
+            img(src="image/list-0"+(i+1)+".png")
+            +bs-mititle(val.name)
+            p.info= val.info
+      .y-clicp
+        p
+      .y-main-type
+        .y-type 
+          img(src="image/type-01.png")
+          p 形象维护
+          p 通过舆情监测，及时关注行业敏感舆情，有效引导，并及时化解企业可能面临的各种危机或者利用有利的舆论有效推广企业，维持企业在消费者心中的形象和信用度
+        .y-type 
+          img(src="image/type-01.png")
+          p 用户巩固  
+          p 通过舆情监测能及时获知用户的需求，并及时给出相应的回复以及处理方案，和传播打时间占有战，让用户能在第一时间获悉企业对问题的处理方式，有效提高用户忠诚度
+      .y-main-fun
+        .y-con-title
+          +bs-title('我们的功能')
+        .y-fun-list
+          - 
+            var arrtype=[
+              {
+                title:'全网检测',
+                info :'为客户全面掌握用户的舆论动态  提供分析依据，作出正确引导'
+              },{
+                title:'智能分析',
+                info :'帮助您了解听众，查看情感值的变化趋势 并作出正确的市场策略'
+              },{
+                title:'危机预警',
+                info :'遇到突发危机事件，及时提醒'
+              }
+            ]
+            
+          each val,i in arrtype
+            .y-fun
+              img(src="image/fun-list0"+(i+1)+".png")
+              +bs-mititle(val.title)
+              p.info= val.info
+      .y-industry
+        .y-con-title
+          +bs-title('行业应用')
+        .y-industry-list
+          - 
+            var arrIn=[
+              {
+                title:"政府机构",
+                info:"实时掌握互联网舆论，了解民众心声 保障网络舆论安全，提升服务效率和口碑。"
+              },{
+                title:"广电传媒",
+                info:"快速发现舆论热点，挖掘新闻线索 梳理传播脉络，跟踪受众喜好倾向 鉴别新闻炒作"               
+              },{
+                title:"金融理财",
+                info:"银行信贷风控管理，企业贷款风险识别评估 P2P金融舆论风险评估"               
+              },{
+                title:"能源电力",
+                info:"电力是以电能作为动力的能源，电力的发明 和应用掀起了第二次工业化高潮。"               
+              },{
+                title:"生态环保",
+                info:"快速掌握网上环保舆论，及时跟踪 污染线索，了解并回应民众的环保诉求"               
+              },{
+                title:"医疗卫生",
+                info:"关注突发公共卫生事件，疾病防控 医疗资源供需平衡，医患纠纷 提升医疗服务质量"               
+              },{
+                title:"企业品牌",
+                info:"分析消费者对品牌的认知和注意力迁移 关注竞品分析，塑造品牌口碑"               
+              },{
+                title:"旅游景区",
+                info:"倾听游客反馈，预判旅游出行趋势 与热门程度，提升旅游服务的体验"               
+              },
+              
+            ] 
+          each val,i in arrIn
+            .y-list-c
+              .img
+                img(src="image/ind-list0"+(i+1)+".png")
+              +bs-mititle(val.title)
+              p.info= val.info
+      .y-customer
+        .y-con-title
+          +bs-title('我们服务的客户')
+        .y-cus-list
+          ul
+            - for (var i=1;i<7;i++)
+                li 
+                  span
+                    img(src="image/cus-list0" + i + ".png")
